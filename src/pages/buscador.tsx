@@ -35,30 +35,30 @@ const Buscador = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center">
-      <div className="p-6 bg-white border-[2px] border-gray-800 rounded-lg">
-        <h2 className="text-lg font-semibold mb-4">Buscar CEP</h2>
-        <div className="flex">
+    <div className="h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
+      <div className="p-6 bg-gray-800 border-[2px] border-gray-700 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-semibold mb-4 text-center">Buscar CEP</h2>
+        <div className="flex justify-center">
           <input
             type="text"
             maxLength={8}
             value={cep}
             onChange={(e) => setCep(e.target.value)}
             placeholder="Digite o CEP"
-            className="border-[2px] border-gray-800 p-2 rounded-md w-40"
+            className="border-[2px] border-gray-700 p-3 rounded-md w-40 bg-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
             onClick={buscarCep}
-            className="bg-blue-500 text-white px-4 py-2 rounded ml-2 hover:bg-blue-600 hover:cursor-pointer hover:transform hover:scale-105 duration-350"
+            className="bg-blue-600 text-white px-6 py-3 rounded ml-4 hover:bg-blue-700 hover:scale-105 duration-300"
           >
             Buscar
           </button>
         </div>
 
-        {erro && <p className="text-red-500 mt-2">{erro}</p>}
+        {erro && <p className="text-red-400 mt-3 text-center">{erro}</p>}
 
         {dados && (
-          <div className="mt-4 border p-2 rounded bg-gray-100">
+          <div className="mt-4 border p-3 rounded bg-gray-700 text-white">
             <p>
               <strong>Rua:</strong> {dados.logradouro}
             </p>
